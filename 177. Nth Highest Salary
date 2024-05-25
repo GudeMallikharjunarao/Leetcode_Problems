@@ -1,0 +1,56 @@
+177. Nth Highest Salary
+
+Write a solution to find the nth highest salary from the Employee table. If there is no nth highest salary, return null.
+
+The result format is in the following example.
+
+Example 1:
+
+Input: 
+Employee table:
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 100    |
+| 2  | 200    |
+| 3  | 300    |
++----+--------+
+n = 2
+Output: 
++------------------------+
+| getNthHighestSalary(2) |
++------------------------+
+| 200                    |
++------------------------+
+Example 2:
+
+Input: 
+Employee table:
++----+--------+
+| id | salary |
++----+--------+
+| 1  | 100    |
++----+--------+
+n = 2
+Output: 
++------------------------+
+| getNthHighestSalary(2) |
++------------------------+
+| null                   |
++------------------------+
+
+
+
+sol:
+
+CREATE OR REPLACE FUNCTION NthHighestSalary(N INT) 
+RETURNS TABLE (Salary INT) AS $$
+DECLARE 
+    M INT;
+BEGIN
+    M := N - 1;
+    RETURN QUERY (
+        SELECT DISTINCT Employee.Salary FROM Employee ORDER BY Employee.Salary DESC LIMIT 1 OFFSET M
+    );
+END;
+$$ LANGUAGE plpgsql;
