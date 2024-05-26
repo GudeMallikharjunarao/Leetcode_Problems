@@ -1,0 +1,87 @@
+1. How do you handle duplicate values in a Pandas DataFrame?
+
+Ans: 
+--- check null values in the entire Dataframe.df.isnull()
+-- Remove rows with null values using df_1 = df.dropna()
+--Fill null values with a constraint = df.fillna(value=0)
+--interpolate() –
+
+By default, this function fills the missing or NaN values with the linear interpolated values. However, you can customize the interpolation technique to polynomial, time, index, spline, etc., using its ‘method’ parameter.
+
+The interpolation method is highly suitable for time series data, whereas fillna is a more generic approach.
+an use three methods to handle missing values in pandas
+
+2. What is the purpose of the apply() function in Pandas? Can you provide an example?
+
+Ans: 
+
+The apply() method is one of the most common methods of data preprocessing. It simplifies applying a function on each element in a pandas Series and each row or column in a pandas DataFrame.
+
+df = pd.DataFrame({'A': [1, 2], 'B': [10, 20]})
+
+
+def square(x):
+    return x * x
+
+
+df1 = df.apply(square)
+
+print(df)
+print(df1)
+
+
+3. How do you handle categorical data in Pandas?
+
+Ans: 
+
+Handling categorical data in Pandas involves several steps, including conversion to categorical types, encoding, and dealing with missing values. 
+
+
+4. What are the benefits of using vectorized operations in NumPy?
+5. How do you reshape a NumPy array?
+6. What is broadcasting in NumPy and how does it work?
+7. How do you concatenate two or more arrays in NumPy?
+8. What is the purpose of the axis parameter in NumPy functions?
+9. How do you perform element-wise multiplication on two NumPy arrays?
+10. How do you calculate the correlation coefficient between two columns in a Pandas DataFrame?
+11. What is the purpose of the groupby() function in Pandas? Can you provide an example?
+12. How do you handle outliers in a Pandas DataFrame?
+13. What is method chaining in Pandas? How does it improve code readability?
+14. How do you handle datetime data in Pandas?
+15. What are some common methods for data normalization in Pandas?
+16. How do you perform feature scaling on a Pandas DataFrame?
+17. What is the purpose of the applymap() function in Pandas? Can you provide an example?
+18. How do you create a pivot table in Pandas using the pivot_table() function?
+19. How do you handle multi-indexing in Pandas DataFrames?
+20. What are some techniques for handling imbalanced datasets in Pandas or NumPy?
+
+
+How do you handle null values in pandas dataframe ?
+
+Ans: 
+--- check null values in the entire Dataframe.df.isnull()
+-- Remove rows with null values using df_1 = df.dropna()
+--Fill null values with a constraint = df.fillna(value=0)
+--interpolate() –
+
+By default, this function fills the missing or NaN values with the linear interpolated values. However, you can customize the interpolation technique to polynomial, time, index, spline, etc., using its ‘method’ parameter.
+
+The interpolation method is highly suitable for time series data, whereas fillna is a more generic approach.
+an use three methods to handle missing values in pandas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
